@@ -1,0 +1,26 @@
+Pentru inceput am creat clasele Document,Catalog si CatalogUtil.
+
+Clasa Document:
+*implementeaza interfata Serializable pentru ca un obiect de tip Document sa poata fi serializat . Serializarea este un proces de transformare a obiectelor intr-un flux de octeti ce poate fi scris,convertiti intr-un byte-stream, obiectele se pot scrie in fisiere (acest lucru este necesar metodelor din clasa CatalogUtil , ele lucreaza cu obiecte serializate pentru a salva/deschide/vizualiza  fisiere)
+*clasa contine metode simple de adaugarea etichete (addTag) gettere si settere
+
+Clasa Catalog:
+*implementeaza si aceasta interfata Serializable
+*contine metode simple de adaugare de noi documente (add) si de gasire a unui document in functie de id (findById) ,precum gettere si settere
+
+Clasa CatalogUtil:
+*clasa ce contine metodele save/load/view
+
+*Medota SAVE 
+- are ca si parametru un obiect de tip Catalog , utilizeaza o instanta FileOutputStream pentru a scrie date in fisier ,pentru serializarea obiectului se foloseste instanta ObjectOutputStream care converteste obiectul in byte-stream si astfel se permite scrierea obiectului in fisier, utilizand metoda writeObject.
+
+*Metoda LOAD
+-are ca si parametru calea catre un obiect (de tip Catalog) utilizeaza instanta FileInputStream care obtine octetii de intrare , folosita la citirea datelor si obiectelor orientate pe octeti
+-Instanta ObjectInputStream folosita pentru deserializarea obiectelor (pentru ca aceste date au fost scrise initial cu ObjectOuputStream)
+-in acelasi timp tratanduse cazuri de eroare ,daca se poate citi din fisier sau daca se pot incarca datele.
+
+*Metoda VIEW- are ca si parametru un obiect de tipul Document, ajutandu-ne de un obiect de tipul Desktop  se verifica daca Desktopul este suportat de platforma  
+-daca exista fisierul de la locatia oferita (doc.getLocation) se deschide fisierul pe Desktop utilizand o metoda ( open) a clasei Desktop 
+-in acelasi timp blocul de cod try este testat pentru erori in timpul executarii
+
+
