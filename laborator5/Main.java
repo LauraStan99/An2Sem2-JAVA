@@ -7,7 +7,7 @@ public class Main {
         public static void main(String args[]) {
             Main app = new Main();
             app.testCreateSave();
-           // app.testLoadView();
+            app.testLoadView();
         }
 
         private void testCreateSave() {

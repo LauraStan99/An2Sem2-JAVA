@@ -17,10 +17,11 @@ Clasa CatalogUtil:
 *Metoda LOAD
 -are ca si parametru calea catre un obiect (de tip Catalog) utilizeaza instanta FileInputStream care obtine octetii de intrare , folosita la citirea datelor si obiectelor orientate pe octeti
 -Instanta ObjectInputStream folosita pentru deserializarea obiectelor (pentru ca aceste date au fost scrise initial cu ObjectOuputStream)
--in acelasi timp tratanduse cazuri de eroare ,daca se poate citi din fisier sau daca se pot incarca datele.
+-astfel cu ajutorul metodei readObject() se citesc datele din ObjectInputStream si este returnat noul catalog
+-in acelasi timp tratandu-se cazuri de eroare ,daca se poate citi din fisier sau daca se pot incarca datele.
 
 *Metoda VIEW- are ca si parametru un obiect de tipul Document, ajutandu-ne de un obiect de tipul Desktop  se verifica daca Desktopul este suportat de platforma  
--daca exista fisierul de la locatia oferita (doc.getLocation) se deschide fisierul pe Desktop utilizand o metoda ( open) a clasei Desktop 
+-daca exista fisierul de la locatia oferita (doc.getLocation) se deschide fisierul pe Desktop utilizand o metoda ( open) a clasei Desktop , altfel folosesc metoda browse () insemnand ca avem un fisier URL
 -in acelasi timp blocul de cod try este testat pentru erori in timpul executarii
 
 
